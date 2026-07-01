@@ -223,3 +223,6 @@ directly through any of the channels below.
 | `bc1qf3yy0w8z37rwavxpu38wem3yffpanw7wzj32qj` | `0x27d9a6a5b8507e6031bb044319410da96222d402` | [paypal.me/agentflowenterprise](https://paypal.me/agentflowenterprise) |
 
 </div>
+<p align="center">
+  <img src="assets/banner.svg" alt="ofi-chain-forensics banner" width="900">
+</p>
