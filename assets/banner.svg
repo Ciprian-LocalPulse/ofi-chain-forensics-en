@@ -1,0 +1,215 @@
+<svg viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg" width="900" height="280">
+  <defs>
+
+    <!-- Background gradient -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#050D18"/>
+      <stop offset="50%"  stop-color="#0A1628"/>
+      <stop offset="100%" stop-color="#071220"/>
+    </linearGradient>
+
+    <!-- Main title glow -->
+    <filter id="glow-strong" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur1"/>
+      <feGaussianBlur stdDeviation="12" result="blur2"/>
+      <feMerge>
+        <feMergeNode in="blur2"/>
+        <feMergeNode in="blur1"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Soft node glow -->
+    <filter id="glow-soft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle text glow -->
+    <filter id="glow-text" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Wave mask -->
+    <clipPath id="wave-clip">
+      <rect x="0" y="230" width="900" height="50"/>
+    </clipPath>
+
+  </defs>
+
+  <!-- ─── BACKGROUND ─── -->
+  <rect width="900" height="280" fill="url(#bg)"/>
+
+  <!-- subtle grid lines -->
+  <g opacity="0.04" stroke="#00FFB3" stroke-width="0.5">
+    <line x1="0" y1="70"  x2="900" y2="70"/>
+    <line x1="0" y1="140" x2="900" y2="140"/>
+    <line x1="0" y1="210" x2="900" y2="210"/>
+    <line x1="150" y1="0" x2="150" y2="280"/>
+    <line x1="300" y1="0" x2="300" y2="280"/>
+    <line x1="450" y1="0" x2="450" y2="280"/>
+    <line x1="600" y1="0" x2="600" y2="280"/>
+    <line x1="750" y1="0" x2="750" y2="280"/>
+  </g>
+
+  <!-- ─── ANIMATED NETWORK GRAPH (blockchain nodes) ─── -->
+
+  <!-- Edges -->
+  <g stroke="#00FFB3" stroke-width="0.8" opacity="0.18">
+    <line x1="60"  y1="60"  x2="140" y2="110"/>
+    <line x1="140" y1="110" x2="230" y2="75"/>
+    <line x1="140" y1="110" x2="170" y2="190"/>
+    <line x1="230" y1="75"  x2="310" y2="130"/>
+    <line x1="170" y1="190" x2="310" y2="130"/>
+    <line x1="700" y1="55"  x2="790" y2="100"/>
+    <line x1="790" y1="100" x2="840" y2="55"/>
+    <line x1="790" y1="100" x2="820" y2="185"/>
+    <line x1="840" y1="55"  x2="860" y2="140"/>
+    <line x1="820" y1="185" x2="860" y2="140"/>
+  </g>
+
+  <!-- Nodes — left cluster -->
+  <g filter="url(#glow-soft)">
+    <circle cx="60"  cy="60"  r="5" fill="#00FFB3" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;1;0.4" dur="2.1s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="4;6;4"     dur="2.1s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="140" cy="110" r="7" fill="#00FFB3" opacity="0.9">
+      <animate attributeName="opacity" values="0.6;1;0.6" dur="1.7s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="5;8;5"     dur="1.7s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="230" cy="75"  r="5" fill="#00E5FF" opacity="0.7">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="170" cy="190" r="4" fill="#00FFB3" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.9s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="310" cy="130" r="6" fill="#FF4C6A" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;1;0.5"   dur="1.5s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="5;8;5"        dur="1.5s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- Nodes — right cluster -->
+  <g filter="url(#glow-soft)">
+    <circle cx="700" cy="55"  r="5" fill="#00E5FF" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2.2s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="790" cy="100" r="7" fill="#00FFB3" opacity="0.9">
+      <animate attributeName="opacity" values="0.5;1;0.5"   dur="1.8s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="5;8;5"        dur="1.8s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="840" cy="55"  r="4" fill="#00FFB3" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.8;0.3" dur="2.6s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="820" cy="185" r="5" fill="#FF4C6A" opacity="0.8">
+      <animate attributeName="opacity" values="0.5;1;0.5"   dur="1.4s" repeatCount="indefinite"/>
+      <animate attributeName="r"       values="4;7;4"        dur="1.4s" repeatCount="indefinite"/>
+    </circle>
+    <circle cx="860" cy="140" r="4" fill="#00E5FF" opacity="0.6">
+      <animate attributeName="opacity" values="0.3;0.9;0.3" dur="2.0s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <!-- ─── TRAVELLING PACKET (data pulse along edges) ─── -->
+  <circle r="3" fill="#FFFFFF" opacity="0.9" filter="url(#glow-soft)">
+    <animateMotion dur="3.5s" repeatCount="indefinite" calcMode="linear">
+      <mpath>
+        <path d="M60,60 L140,110 L230,75 L310,130 L170,190 L140,110"/>
+      </mpath>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="3.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle r="3" fill="#00FFB3" opacity="0.9" filter="url(#glow-soft)">
+    <animateMotion dur="4.0s" repeatCount="indefinite" calcMode="linear" begin="1.5s">
+      <mpath>
+        <path d="M700,55 L790,100 L840,55 L860,140 L820,185 L790,100"/>
+      </mpath>
+    </animateMotion>
+    <animate attributeName="opacity" values="0;1;1;0" dur="4.0s" begin="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- ─── MAIN TITLE ─── -->
+  <text
+    x="450" y="118"
+    font-family="'Courier New', 'Lucida Console', monospace"
+    font-size="42"
+    font-weight="700"
+    fill="#00FFB3"
+    text-anchor="middle"
+    letter-spacing="1"
+    filter="url(#glow-strong)"
+  >
+    ofi-chain-forensics
+    <animate attributeName="opacity" values="0.85;1;0.85" dur="3s" repeatCount="indefinite"/>
+  </text>
+
+  <!-- ─── SUBTITLE ─── -->
+  <text
+    x="450" y="154"
+    font-family="'Courier New', 'Lucida Console', monospace"
+    font-size="14"
+    fill="#00E5FF"
+    text-anchor="middle"
+    letter-spacing="3"
+    opacity="0.85"
+    filter="url(#glow-text)"
+  >
+    BLOCKCHAIN FRAUD &amp; AML PATTERN DETECTION
+  </text>
+
+  <!-- ─── BADGES ROW ─── -->
+  <!-- MIT -->
+  <rect x="286" y="176" width="52" height="20" rx="4" fill="#00FFB3" opacity="0.15"/>
+  <rect x="286" y="176" width="52" height="20" rx="4" fill="none" stroke="#00FFB3" stroke-width="0.8" opacity="0.6"/>
+  <text x="312" y="190" font-family="monospace" font-size="10" fill="#00FFB3" text-anchor="middle" letter-spacing="1">MIT</text>
+
+  <!-- PYTHON -->
+  <rect x="348" y="176" width="76" height="20" rx="4" fill="#3776AB" opacity="0.2"/>
+  <rect x="348" y="176" width="76" height="20" rx="4" fill="none" stroke="#3776AB" stroke-width="0.8" opacity="0.6"/>
+  <text x="386" y="190" font-family="monospace" font-size="10" fill="#79B8FF" text-anchor="middle" letter-spacing="1">PYTHON 3.9+</text>
+
+  <!-- TESTS -->
+  <rect x="434" y="176" width="96" height="20" rx="4" fill="#00C853" opacity="0.15"/>
+  <rect x="434" y="176" width="96" height="20" rx="4" fill="none" stroke="#00C853" stroke-width="0.8" opacity="0.6"/>
+  <text x="482" y="190" font-family="monospace" font-size="10" fill="#00C853" text-anchor="middle" letter-spacing="1">21 TESTS ✓</text>
+
+  <!-- PRs -->
+  <rect x="540" y="176" width="76" height="20" rx="4" fill="#FF6F00" opacity="0.15"/>
+  <rect x="540" y="176" width="76" height="20" rx="4" fill="none" stroke="#FF6F00" stroke-width="0.8" opacity="0.6"/>
+  <text x="578" y="190" font-family="monospace" font-size="10" fill="#FFA040" text-anchor="middle" letter-spacing="1">PRs ♥</text>
+
+  <!-- ─── TAGLINE ─── -->
+  <text
+    x="450" y="228"
+    font-family="'Courier New', monospace"
+    font-size="11"
+    fill="#00FFB3"
+    text-anchor="middle"
+    letter-spacing="2"
+    opacity="0.5"
+  >
+    100% gratuit · fără cont · fără API key · fără limite
+  </text>
+
+  <!-- ─── BOTTOM WAVE ─── -->
+  <path d="M0,252 Q112,238 225,252 T450,252 T675,252 T900,252 L900,280 L0,280 Z"
+        fill="#00FFB3" opacity="0.04">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; -30,4; 0,0" dur="5s" repeatCount="indefinite"/>
+  </path>
+  <path d="M0,260 Q150,246 300,260 T600,260 T900,260 L900,280 L0,280 Z"
+        fill="#00E5FF" opacity="0.06">
+    <animateTransform attributeName="transform" type="translate"
+      values="0,0; 25,3; 0,0" dur="6.5s" repeatCount="indefinite"/>
+  </path>
+
+</svg>
