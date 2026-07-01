@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="assets/banner.svg" alt="ofi-chain-forensics banner" width="900">
+</p>
+
 # ofi-chain-forensics — English version
 
 🇷🇴 [Versiunea în română este aici](../ofi-chain-forensics-ro/README.md)
